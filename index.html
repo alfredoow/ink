@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>INCREMENTAL</title>
+	<link rel="shortcut icon" href="https://www.searchpng.com/wp-content/uploads/2019/01/Whatsapp-icon-png-715x715.png">
+	<style>
+		#value_text {
+			font-size:25px;
+			color:#f54b42;
+		}
+		
+		body {
+			text-align:center;
+			color:white;
+			background-color:#171717;
+		}
+		
+		#btn_cps {
+			color:white;
+			background-color:#171717;
+			border-style: solid;
+			border-color: white;
+		}
+	</style>
+	<script>
+		var cookies = 10;
+		var cps = 0;
+	</script>
+</head>
+
+<body>
+	<div style = font-family:"arial">
+		You have <span id = "value_text">10</span> cookies.<br>
+		You are getting <span id = "cps_text">0</span> cookies per second.
+	</div>
+	<div>
+		<br><button id = "btn_cps" href = # onclick = "rise()">+CPS</button>
+	</div>
+	<script>
+		window.setInterval(function() {
+			cookies += cps;
+			document.getElementById("value_text").innerHTML = cookies;
+			document.getElementById("cps_text").innerHTML = cps;
+		},33)
+		function rise() {
+			cps ++;
+		}
+	</script>
+</body>
+</html>
