@@ -55,7 +55,7 @@
 	</div>
 	<script>
 		window.setInterval(function() {
-			document.getElementById("value_text").innerHTML = ink+"L";
+			document.getElementById("value_text").innerHTML = Math.trunc(ink)+"L";
 			document.getElementById("ips_text").innerHTML = ips+"L";
 			document.getElementById("cost_ip").innerHTML = Math.trunc(pr_pump);+"L";
 			document.getElementById("cost_cd").innerHTML = Math.trunc(pr_cdr)+"L";
