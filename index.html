@@ -8,41 +8,61 @@
 			color:#f54b42;
 		}
 		
+		#ips_text {
+			color:#f54b42;
+			font-size:16px;
+		}
+		
 		body {
 			text-align:center;
 			color:white;
 			background-color:#171717;
+			font-family:"arial";
 		}
 		
-		#btn_cps {
-			color:white;
-			background-color:#171717;
-			border-style: solid;
-			border-color: white;
+		#btn_ips {
+			color:#ffffff;
+			background-color:#383838;
+			padding: 4px 8px;
+			border: 2px solid #f54b42;
+			border-radius: 8px;
+			font-size:12px;
+			display: inline-block;
+			font-size:16px;
+		}
+		#btn_ips:hover {
+			color:#ffffff;
+			background-color:#585858;
 		}
 	</style>
 	<script>
-		var cookies = 10;
-		var cps = 0;
+		var ink = 10;
+		var ips = 0;
+		var pr_pump = 10;
 	</script>
 </head>
 
 <body>
-	<div style = font-family:"arial">
-		You have <span id = "value_text">10</span> cookies.<br>
-		You are getting <span id = "cps_text">0</span> cookies per second.
-	</div>
 	<div>
-		<br><button id = "btn_cps" href = # onclick = "rise()">+CPS</button>
+		You have <span id = "value_text">10</span> of Ink.<br>
+		You are getting <span id = "ips_text">0</span> of Ink per second.
+	</div>
+	<div style = font-size:20px;>
+		<br>Ink Pump <button id = "btn_ips" href = # onclick = "buy()">Cost: <span id = "cost_ip">10</span></button>
 	</div>
 	<script>
 		window.setInterval(function() {
-			cookies += cps;
-			document.getElementById("value_text").innerHTML = cookies;
-			document.getElementById("cps_text").innerHTML = cps;
-		},33)
-		function rise() {
-			cps ++;
+			ink += ips;
+			document.getElementById("value_text").innerHTML = ink+"L";
+			document.getElementById("ips_text").innerHTML = ips+"L";
+			document.getElementById("cost_ip").innerHTML = pr_pump+"L";
+		},60)
+		function buy() {
+			if (ink >= pr_pump) {
+				ips ++;
+				ink -= pr_pump;
+				pr_pump *= 2;
+			}
 		}
 	</script>
 </body>
