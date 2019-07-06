@@ -1,86 +1,62 @@
+<!DOCTYPE HTML>
 <html>
 <head>
-	<title>INCREMENTAL</title>
-	<link rel="shortcut icon" href="https://www.searchpng.com/wp-content/uploads/2019/01/Whatsapp-icon-png-715x715.png">
-	<style>
-		#value_text {
-			font-size:25px;
-			color:#f54b42;
-		}
-		
-		#ips_text {
-			color:#f54b42;
-			font-size:16px;
-		}
-		
-		body {
-			text-align:center;
-			color:white;
-			background-color:#171717;
-			font-family:"arial";
-		}
-		
-		#btn_ips {
-			color:#ffffff;
-			background-color:#383838;
-			padding: 4px 8px;
-			border: 2px solid #f54b42;
-			border-radius: 8px;
-			font-size:12px;
-			display: inline-block;
-			font-size:16px;
-		}
-		#btn_ips:hover {
-			color:#ffffff;
-			background-color:#585858;
-		}
-	</style>
-	<script>
-		var ink = 10;
-		var ips = 0;
-		var cdr = 1;
-		var pr_pump = 10;
-		var pr_cdr = 25;
-	</script>
+	<link rel="shortcut icon" href="https://image.flaticon.com/icons/png/512/34/34042.png">
+	<title>Ink</title>
+<style>
+	body {
+		font-family: arial;
+		text-align:center;
+		font-weight: bold;
+		font-size: 18px;
+		color:#fff;
+		background-color:#171717;
+	}
+	span {
+		color:#ff2e49;
+		font-size: 24px;
+	}
+	button {
+		color:#fff;
+		background:#171717;
+		border:solid;
+		border-color:#ff2e49;
+		width: 100px;
+		height: 50px;
+		transition: background 0.25s;
+		font-size:14px;
+		font-weight:bold;
+		border-radius: 8px;
+		display: inline-block;
+	}
+	button:hover {
+		background:#ff2e49;
+		cursor: pointer;
+	}
+	button:focus {
+		outline:none;
+	}
+	
+</style>
+<script>
+	var ink = 0;
+	var ips = 1;
+</script>
 </head>
-
 <body>
-	<div>
-		You have <span id = "value_text">10</span> of Ink.<br>
-		You are getting <span id = "ips_text">0</span> of Ink per second.
-	</div>
-	<div style = font-size:20px;>
-		<br>Ink Pump <button id = "btn_ips" href = # onclick = "buy_ir()">Cost: <span id = "cost_ip">10L</span></button>
-		<br>Better Engine <button id = "btn_ips" href = # onclick = "buy_id()">Cost: <span id = "cost_cd">25L</span></button>
-	</div>
-	<script>
-		window.setInterval(function() {
-			document.getElementById("value_text").innerHTML = Math.trunc(ink)+"L";
-			document.getElementById("ips_text").innerHTML = ips+"L";
-			document.getElementById("cost_ip").innerHTML = Math.trunc(pr_pump);+"L";
-			document.getElementById("cost_cd").innerHTML = Math.trunc(pr_cdr)+"L";
-			Math.round(pr_pump);
-			Math.round(pr_cdr);
-		},33)
-		window.setInterval(function() {
-			ink += ips;
-			
-			
-		},1500 / cdr)
-		function buy_ir() {
-			if (ink >= pr_pump) {
-				ips ++;
-				ink -= pr_pump;
-				pr_pump *= 1.25;
-			}
-		}
-		function buy_id() {
-			if (ink >= pr_cdr) {
-				cdr += 0.25;
-				ink -= pr_cdr;
-				pr_cdr *= 1.25;
-			}
-		}
-	</script>
+	You have <span id = "INK"></span> of Ink.
+	<br>You Ink rate is of <span id = "IPS"></span> of Ink per second.</br>
+	<br><button onclick = "add()">More IPS</button></br>
+<script>
+	function add() {
+		ips += 1;
+	}
+	
+	window.setInterval(function () {
+		document.getElementById("INK").innerHTML = Math.round(ink)+"L";
+		document.getElementById("IPS").innerHTML = Math.round(ips)+"L";
+		ink += ips;
+	},33);
+</script>
 </body>
-</html>
+<html>
