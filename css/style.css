@@ -1,0 +1,68 @@
+  body {
+    font-family: arial;
+		text-align: center;
+		font-weight: bold;
+    font-size:24px;
+		color:#fff;
+		background-color:#171717;
+  }
+
+	.ink {
+		color:#ff2e49;
+	}
+
+  .money {
+    color:#10a355;
+  }
+
+  .tiny {
+    font-size:14px;
+  }
+
+  #base {
+    position: absolute;
+    margin: auto;
+    width: 100%;
+  }
+
+  #wrapper {
+    position:absolute;
+    padding: 15px;
+    left:-15px;
+    top:60px;
+  }
+
+  #wrapper2 {
+    position:absolute;
+    padding: 15px;
+    left:100px;
+    top:40px;
+    line-height: 3;
+    font-size:18px;
+    text-align: left;
+  }
+
+	button {
+		color:#fff;
+		background:#171717;
+		border:solid;
+		border-color:#ff2e49;
+		width: 100px;
+		height: 50px;
+		transition: background 0.25s;
+		font-size:14px;
+		font-weight:bold;
+    text-align:center;
+		border-radius: 8px;
+		display: inline-block;
+    margin: 5px;
+	}
+
+	button:hover {
+		background:#ff2e49;
+		cursor: pointer;
+	}
+
+	button:focus {
+		outline:none;
+	}
