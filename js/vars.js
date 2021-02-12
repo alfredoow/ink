@@ -1,5 +1,6 @@
 //base
 var ink = 0.0; //total ink
+var totalsize = 0.0; //total ink storage size
 var money = 1.0; //money in $
 var ips = 0.0; //ink per second
 
@@ -13,4 +14,3 @@ var cartridgeammount = 1; //how many cartridges there are
 var cartridgesize = 0.01; //size of each cartridge
 var cartridgeupgrade = 10; //price of upgrading cartridge size
 var cartridgeprice = 1.50;
-var totalsize = cartridgesize * cartridgeammount; //total storage size

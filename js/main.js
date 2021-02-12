@@ -4,6 +4,8 @@ function sellInk() {
 }
 
 function display() {
+  totalsize = cartridgesize * cartridgeammount;
+  
   for (let i = 0; i < 5; i++) {
     checkifml(i); //converts the units from mL to L
   }
